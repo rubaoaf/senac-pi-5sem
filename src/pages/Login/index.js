@@ -42,8 +42,8 @@ export default function Login() {
                 <View style={styles.topView}>
 
                     <View style={styles.boxTop}>
-                        <MaterialIcons name='support-agent' size={60} color='maroon' />
-                        <Text style={styles.textLogo}> Secretari-e </Text>    
+                        <MaterialIcons name='support-agent' size={60} color='#008b8b' />
+                        <Text style={styles.textLogo}> Seja bem vindo ao Secretari-E </Text>    
                     </View>
                 
                 </View>
@@ -56,7 +56,7 @@ export default function Login() {
                             onChangeText={(value) => validaEmail(value)}
                             value={email}
                             placeholderTextColor='#707070'
-                            placeholder='e-mail'
+                            placeholder='E-mail'
                         />
                         <TextInput
                             style={styles.input}
