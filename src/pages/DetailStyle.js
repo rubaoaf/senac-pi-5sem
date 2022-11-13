@@ -7,6 +7,7 @@ const styles = StyleSheet.create({
         width: '100%',
         backgroundColor: '#f8f8ff',
         padding: '5%',
+        marginTop: 25,
     },
 
     titulo:{
