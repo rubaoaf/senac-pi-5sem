@@ -10,7 +10,7 @@ export default function HomeProf( { route } ) {
         <View style={styles.container}>
 
             <View>
-                <Text style={[styles.cabec1]}>Olá {route.params.paramKey}</Text>
+                <Text style={[styles.cabec1]}>Olá! {route.params.paramKey}</Text>
             </View>
 
             <View>
@@ -22,7 +22,7 @@ export default function HomeProf( { route } ) {
                 <ItemMenuProf 
                     img={require('../../assets/favicon.png')}
                     nome='Dr. Eliseu Duarte'
-                    especialidade='psicólogia'
+                    especialidade='Psicólogia'
                     data='25/11/2022'
                     horario='8h30'
                 ></ItemMenuProf>
@@ -30,7 +30,7 @@ export default function HomeProf( { route } ) {
                 <ItemMenuProf
                     img={require('../../assets/favicon.png')}
                     nome='Dra. Carmem Siqueira'
-                    especialidade='psicólogia'
+                    especialidade='Psicólogia'
                     data='25/11/2022'
                     horario='14h30'
                 ></ItemMenuProf>
@@ -38,7 +38,7 @@ export default function HomeProf( { route } ) {
                 <ItemMenuProf
                     img={require('../../assets/favicon.png')}
                     nome='Dra. Amanda Soares'
-                    especialidade='fisioterapia'
+                    especialidade='Fisioterapia'
                     data='13/12/2022'
                     horario='11h'
                 ></ItemMenuProf>
