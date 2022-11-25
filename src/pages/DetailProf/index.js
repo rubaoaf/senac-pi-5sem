@@ -1,11 +1,12 @@
 import React from "react";
-import { View, Text} from 'react-native';
+import { View, Text, Button} from 'react-native';
 import styles from '../DetailStyle';
 
-export default function DetailProf( { route } ) {
+export default function DetailProf( { navigation, route } ) {
 
   return (
     <View style={styles.coluna}>
+      <Button title="Voltar" onPress={() => navigation.goBack()} />
       <Text style={styles.titulo}>Detalhe do Profissional </Text>
       <Text style={styles.texto}>Nome: {route.params.nome} </Text>
       <Text style={styles.texto}>Especialidade: {route.params.especialidade} </Text>

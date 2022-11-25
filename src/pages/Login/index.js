@@ -4,6 +4,9 @@ import { KeyboardAvoidingView, Platform } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { MaterialIcons } from '@expo/vector-icons';
 import styles from './LoginStyle';
+// import fetch from '../libs/fetch'
+// import useSWR from 'swr'
+import { auth } from '../../services'
 
 export default function Login() {
 
@@ -21,12 +24,17 @@ export default function Login() {
         setSenha(senha);
     }
  
-    function direciona() {
-
-        if (email == 'abc') navigation.navigate( 'HomeCliente', {paramKey: email } );
-        
-        if (email !== 'abc') navigation.navigate( 'HomeProf', {paramKey: email } );
-    
+    const direciona = async () => {
+        try {
+            const user = await auth.authUser({ email, senha }).then((data) => data);
+            console.log('direciona:  ', user)
+            if(user) {
+                return navigation.navigate( 'HomeCliente', {paramKey: user.id } );
+            }    
+            
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     return (

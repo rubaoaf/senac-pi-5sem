@@ -8,7 +8,6 @@ export default function HomeProf( { route } ) {
     return (
 
         <View style={styles.container}>
-
             <View>
                 <Text style={[styles.cabec1]}>Olá {route.params.paramKey}</Text>
             </View>
