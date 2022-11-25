@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
         height: 25,
     },
     texto:{
-        fontFamily: 'Anton_400Regular',
+        fontFamily: 'Dosis_400Regular',
         fontSize: 20,
         marginHorizontal: '1%',
     },    

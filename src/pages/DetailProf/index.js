@@ -13,7 +13,7 @@ export default function DetailProf( { navigation, route } ) {
       <Text style={styles.texto}>Data: {route.params.data} </Text>
       <Text style={styles.texto}>Horario: {route.params.horario} </Text>
       <Text style={styles.texto}>Endereço de Atendimento:</Text>
-      <View opacity={0.4}>
+      <View tyle={styles.coluna}>
         <Text style={styles.texto}>Rua Estônia, número 50</Text>
         <Text style={styles.texto}>Telefone (11) 98282-1717</Text>
       </View>

@@ -32,10 +32,12 @@ function Routes(){
                 <Stack.Screen 
                     name="DetailProf"
                     component={DetailProf}
+                    options={{ headerShown: false }}
                 />
                 <Stack.Screen 
                     name="DetailCliente"
                     component={DetailCliente}
+                    options={{ headerShown: false }}
                 />
             </Stack.Navigator>
         </NavigationContainer>

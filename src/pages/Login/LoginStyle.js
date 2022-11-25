@@ -6,6 +6,7 @@ const styles = StyleSheet.create({
       flexDirection: 'column',
       alignItems: 'center',
       flex:1,
+      backgroundColor: 'rgba(255,255,255,0.6)',
     },
     topView: {
         flexDirection: 'column',
@@ -18,42 +19,39 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     boxTop: {
-        width: 150,
+        width: 350,
         height: 150,
-        backgroundColor: 'rgba(255,255,255,0.5)',
         marginTop: 100,
         justifyContent: 'center',
         alignItems: 'center',
-        borderRadius: 30
+        borderRadius: 15
     },
     boxBottom: {
-        width: 300,
+        width: 400,
         height: 180,
-        backgroundColor: 'rgba(255,255,255,0.7)',
         justifyContent: 'center',
         alignItems: 'stretch',
-        borderRadius: 20,
     },
     textLogo: {
         fontSize: 20,
         fontWeight: 'bold',
-        color: 'maroon'
+        color: '#008b8b',
     },
     input: {
         height: 40,
         margin: 12,
         borderWidth: 1,
-        borderRadius: 10,
+        borderRadius: 5,
         padding: 5
     },
     btnContainer:{
-        width: 80,
+        width: 350,
         height: 40,
-        backgroundColor: 'maroon',
+        backgroundColor: '#008b8b',
         marginVertical: '5%',
         justifyContent: 'center',
         alignItems: 'center',
-        borderRadius: 10
+        borderRadius: 5
     },
     textButton: {
         fontSize: 20,
