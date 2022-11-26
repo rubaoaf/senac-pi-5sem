@@ -1,47 +1,65 @@
-import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import Login from './pages/Login';
-import HomeProf from './pages/HomeProf';
-import HomeCliente from './pages/HomeCliente';
-import DetailCliente from './pages/DetailCliente';
-import DetailProf from './pages/DetailProf';
+import Login from "./pages/Login";
+import Cadastro from "./pages/Cadastro";
+import EsqueciSenha from "./pages/EsqueciSenha";
+import AlterarSenha from "./pages/AlterarSenha";
+import HomeProf from "./pages/HomeProf";
+import HomeCliente from "./pages/HomeCliente";
+import DetailCliente from "./pages/DetailCliente";
+import DetailProf from "./pages/DetailProf";
 
 const Stack = createNativeStackNavigator();
 
-function Routes(){
-    return(
-        <NavigationContainer>
-            <Stack.Navigator>
-                <Stack.Screen
-                    name="Login"
-                    component={Login}
-                    options={{ headerShown: false }}
-                />
-                <Stack.Screen
-                    name="HomeProf"
-                    component={HomeProf}
-                    options={{ headerShown: false }}
-                />
-                <Stack.Screen
-                    name="HomeCliente"
-                    component={HomeCliente}
-                    options={{ headerShown: false }}
-                />
-                <Stack.Screen 
-                    name="DetailProf"
-                    component={DetailProf}
-                    options={{ headerShown: false }}
-                />
-                <Stack.Screen 
-                    name="DetailCliente"
-                    component={DetailCliente}
-                    options={{ headerShown: false }}
-                />
-            </Stack.Navigator>
-        </NavigationContainer>
-    )
+function Routes() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Login"
+          component={Login}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Cadastro"
+          component={Cadastro}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="EsqueciSenha"
+          component={EsqueciSenha}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="AlterarSenha"
+          component={AlterarSenha}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="HomeProf"
+          component={HomeProf}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="HomeCliente"
+          component={HomeCliente}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="DetailProf"
+          component={DetailProf}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="DetailCliente"
+          component={DetailCliente}
+          options={{ headerShown: false }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 }
 
 export default Routes;

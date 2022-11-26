@@ -1,17 +1,16 @@
 import { fetchWithTimeout } from "../utils/fetchWithTimeout";
 
-export const authUserRequest = async ({ email, senha }) =>
+export const changePassRequest = async ({ userId, senha }) =>
   fetchWithTimeout(
-    "http://localhost:3001/api/auth",
+    `http://localhost:3001/api/usuario/${userId}`,
     {
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        email: email,
         senha: senha,
       }),
-      method: "POST",
+      method: "PUT",
     },
     null,
     1000

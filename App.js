@@ -1,27 +1,31 @@
-import 'react-native-gesture-handler';
+import "react-native-gesture-handler";
 
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import { StatusBar } from "expo-status-bar";
+import React from "react";
 // import { useFonts, Anton_400Regular } from '@expo-google-fonts/anton';
-import { useFonts, Dosis_400Regular } from '@expo-google-fonts/dosis';
+import {
+  useFonts,
+  Dosis_400Regular,
+  Dosis_700Bold,
+} from "@expo-google-fonts/dosis";
 
-import Routes from './src/router';
+import Routes from "./src/router";
 
 export default function App() {
-
   let [fontsLoaded] = useFonts({
     // Anton_400Regular,
     Dosis_400Regular,
+    Dosis_700Bold,
   });
 
-  if(!fontsLoaded){
+  if (!fontsLoaded) {
     return null;
   }
 
   return (
     <>
       <StatusBar style="light" backgroundColor="#000" translucent={true} />
-      <Routes/>
+      <Routes />
     </>
   );
 }

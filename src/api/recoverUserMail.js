@@ -1,15 +1,14 @@
 import { fetchWithTimeout } from "../utils/fetchWithTimeout";
 
-export const authUserRequest = async ({ email, senha }) =>
+export const recoverUserMailRequest = async ({ email, senha }) =>
   fetchWithTimeout(
-    "http://localhost:3001/api/auth",
+    "http://localhost:3001/api/recover",
     {
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
         email: email,
-        senha: senha,
       }),
       method: "POST",
     },
