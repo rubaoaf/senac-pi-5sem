@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, Button } from "react-native";
 import styles from "../DetailStyle";
 
-export default function DetailCliente({ navigation, route }) {
+export default function ScheduleDetails({ navigation, props }) {
   return (
     <View style={styles.coluna}>
       <Button title="Voltar" onPress={() => navigation.goBack()} />

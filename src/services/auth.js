@@ -16,7 +16,6 @@ export class Auth {
   }
 
   static async changePass(payload) {
-    console.log("changePass: ", payload);
     const data = await changePassRequest(payload);
     return data;
   }

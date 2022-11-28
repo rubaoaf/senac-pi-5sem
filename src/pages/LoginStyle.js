@@ -7,6 +7,9 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "rgba(255,255,255,0.6)",
   },
+  bgWhite: {
+    backgroundColor: "#fff",
+  },
   topView: {
     flexDirection: "column",
     alignItems: "center",

@@ -6,10 +6,9 @@ import Login from "./pages/Login";
 import Cadastro from "./pages/Cadastro";
 import EsqueciSenha from "./pages/EsqueciSenha";
 import AlterarSenha from "./pages/AlterarSenha";
-import HomeProf from "./pages/HomeProf";
-import HomeCliente from "./pages/HomeCliente";
-import DetailCliente from "./pages/DetailCliente";
-import DetailProf from "./pages/DetailProf";
+import Agendar from "./pages/Agendar";
+import Home from "./pages/Home";
+import ScheduleDetails from "./pages/ScheduleDetails";
 
 const Stack = createNativeStackNavigator();
 
@@ -17,6 +16,12 @@ function Routes() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{ headerShown: false }}
+          initialParams={{ userId: 4, userName: "Teste username" }}
+        />
         <Stack.Screen
           name="Login"
           component={Login}
@@ -38,23 +43,13 @@ function Routes() {
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="HomeProf"
-          component={HomeProf}
+          name="ScheduleDetails"
+          component={ScheduleDetails}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="HomeCliente"
-          component={HomeCliente}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="DetailProf"
-          component={DetailProf}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="DetailCliente"
-          component={DetailCliente}
+          name="Agendar"
+          component={Agendar}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

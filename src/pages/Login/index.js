@@ -28,9 +28,11 @@ export default function Login() {
   const direciona = async () => {
     try {
       const user = await auth.authUser({ email, senha }).then((data) => data);
-      console.log("direciona:  ", user);
       if (user) {
-        return navigation.navigate("HomeCliente", { paramKey: user.id });
+        return navigation.navigate("HomeCliente", {
+          userId: user.id,
+          userName: user.nomeCompleto,
+        });
       }
     } catch (error) {
       console.log(error);
