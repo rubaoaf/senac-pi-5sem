@@ -9,9 +9,14 @@ import useSWR from "swr";
 import fetch from "../../libs/fetch";
 
 export default function Home({ route }) {
-  const { userId, userName } = route.params;
-  console.log("serId, userName: ", userId, userName);
-  const { data } = useSWR(
+  const { userId, userName, post } = route.params;
+  React.useEffect(() => {
+    console.log({ userId, userName, post });
+    if (post) {
+      mutate(`http://localhost:3001/api/agendamentos/${userId}`);
+    }
+  }, [post]);
+  const { data, mutate } = useSWR(
     `http://localhost:3001/api/agendamentos/${userId}`,
     fetch
   );

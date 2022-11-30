@@ -10,7 +10,8 @@ import { KeyboardAvoidingView, Platform } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import styles from "../LoginStyle";
 import Header from "../../component/Header";
-import { auth } from "../../services";
+import { userService } from "../../services";
+import { formatDate } from "../../utils/formatDate";
 
 export default function Cadastro() {
   const navigation = useNavigation();
@@ -25,15 +26,18 @@ export default function Cadastro() {
   const cadastrar = async () => {
     try {
       if (senha !== confirmaSenha) return;
+      const dtNascimentoFormated = formatDate(dtNascimento);
       const payload = {
         nomeCompleto: nome,
         email: email,
         cpf: cpf,
-        nascimento: dtNascimento,
+        nascimento: dtNascimentoFormated,
         telefone: telContato,
         senha: senha,
       };
-      const user = await auth.authUser(payload).then((data) => data);
+      const user = await userService
+        .cadastraUsuario(payload)
+        .then((data) => data);
       if (user) {
         return navigation.navigate("Login");
       }

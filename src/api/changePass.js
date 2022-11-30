@@ -10,7 +10,7 @@ export const changePassRequest = async ({ userId, senha }) =>
       body: JSON.stringify({
         senha: senha,
       }),
-      method: "PUT",
+      method: "PATCH",
     },
     null,
     1000

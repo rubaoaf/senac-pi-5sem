@@ -14,19 +14,20 @@ import Header from "../../component/Header";
 import { schedule } from "../../services";
 import { formatDate } from "../../utils/formatDate";
 
-export default function Agendar({ route }) {
+export default function EditarAgendamento({ route, props }) {
   const navigation = useNavigation();
   const { userId, userName } = route.params;
-  const [nomeCliente, setNomeCliente] = useState("");
-  const [telefoneCliente, setTelefoneCliente] = useState("");
-  const [dataAgendada, setDataAgendada] = useState("");
-  const [horarioAgendado, setHorarioAgendado] = useState("");
-  const [observacao, setObservacao] = useState("");
+  const [nomeCliente, setNomeCliente] = useState(props.nomeCliente);
+  const [telefoneCliente, setTelefoneCliente] = useState(props.telefoneCliente);
+  const [dataAgendada, setDataAgendada] = useState(props.dataAgendada);
+  const [horarioAgendado, setHorarioAgendado] = useState(props.horarioAgendado);
+  const [observacao, setObservacao] = useState(props.observacao);
 
-  const agendar = async () => {
+  const alterar = async () => {
     try {
       const formatDataAgendada = formatDate(dataAgendada, horarioAgendado);
       const payload = {
+        id: props.id,
         idUsuario: userId,
         nomeCliente: nomeCliente,
         telefoneCliente: telefoneCliente,
@@ -35,7 +36,7 @@ export default function Agendar({ route }) {
         observacao: observacao,
       };
       const scheduleData = await schedule
-        .addSchedule(payload)
+        .editSchedule(payload)
         .then((data) => data);
       if (scheduleData) {
         return navigation.navigate("Home", {
@@ -62,8 +63,8 @@ export default function Agendar({ route }) {
         style={[styles.container, styles.bgWhite]}
       >
         <Header
-          title="Cadastrar agendamento"
-          description="preencha  os dados e clique em agendar"
+          title="Alterar agendamento"
+          description="altere os dados e clique em alterar"
         />
         <View style={styles.bottomView}>
           <View style={styles.boxBottom}>
@@ -104,8 +105,8 @@ export default function Agendar({ route }) {
             />
           </View>
 
-          <Pressable style={styles.btnContainer} onPress={() => agendar()}>
-            <Text style={styles.textButton}>Agendar</Text>
+          <Pressable style={styles.btnContainer} onPress={() => alterar()}>
+            <Text style={styles.textButton}>Alterar</Text>
           </Pressable>
         </View>
       </KeyboardAvoidingView>

@@ -29,7 +29,7 @@ export default function Login() {
     try {
       const user = await auth.authUser({ email, senha }).then((data) => data);
       if (user) {
-        return navigation.navigate("HomeCliente", {
+        return navigation.navigate("Home", {
           userId: user.id,
           userName: user.nomeCompleto,
         });

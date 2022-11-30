@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, TouchableOpacity, Image } from "react-native";
+import { View, Text, Pressable, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import styles from "../ComponentStyle";
 
@@ -27,9 +27,11 @@ export default function SchuduledItem(props) {
   }
 
   return (
-    <TouchableOpacity
+    <Pressable
       style={styles.container}
-      onPress={() => navigation.navigate("DetailCliente", { ...props })}
+      onPress={() =>
+        navigation.navigate("DetalheAgendamento", { detail: { ...props } })
+      }
     >
       <View style={styles.linha}>
         <Image style={styles.imagem} source={props.img} />
@@ -55,6 +57,6 @@ export default function SchuduledItem(props) {
           )}
         </View>
       </View>
-    </TouchableOpacity>
+    </Pressable>
   );
 }

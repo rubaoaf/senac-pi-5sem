@@ -8,7 +8,8 @@ import EsqueciSenha from "./pages/EsqueciSenha";
 import AlterarSenha from "./pages/AlterarSenha";
 import Agendar from "./pages/Agendar";
 import Home from "./pages/Home";
-import ScheduleDetails from "./pages/ScheduleDetails";
+import DetalheAgendamento from "./pages/DetalheAgendamento";
+import EditarAgendamento from "./pages/EditarAgendamento";
 
 const Stack = createNativeStackNavigator();
 
@@ -20,7 +21,7 @@ function Routes() {
           name="Home"
           component={Home}
           options={{ headerShown: false }}
-          initialParams={{ userId: 4, userName: "Teste username" }}
+          initialParams={{ userId: 6, userName: "Teste username" }}
         />
         <Stack.Screen
           name="Login"
@@ -43,13 +44,18 @@ function Routes() {
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="ScheduleDetails"
-          component={ScheduleDetails}
+          name="DetalheAgendamento"
+          component={DetalheAgendamento}
           options={{ headerShown: false }}
         />
         <Stack.Screen
           name="Agendar"
           component={Agendar}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="EditarAgendamento"
+          component={EditarAgendamento}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
